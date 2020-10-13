@@ -17,7 +17,7 @@ const Modal = () => {
             <div className="modal-content">
               <i className="fas fa-times" onClick={value.closeModal}></i>
               <h1>Added to Bag</h1>
-              <div className="product-info">
+              <div className="modal-product-info">
                 <h3>{product.title}</h3>
                 <img src={product.img} alt="" />
                 <p className="price">${product.price}</p>

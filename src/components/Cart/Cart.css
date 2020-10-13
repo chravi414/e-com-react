@@ -1,0 +1,38 @@
+.cart,
+.empty-cart {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.product {
+    flex: 2;
+}
+
+.qty,
+.amount {
+    flex: 1;
+    text-align: center;
+}
+
+.summary {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width:600px) {
+    .cart,
+    .empty-cart {
+        width: 100%;
+        text-align: center;
+    }
+    .cart-header {
+        display: none;
+    }
+}

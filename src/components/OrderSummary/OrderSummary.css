@@ -1,0 +1,19 @@
+.order-summary {
+    padding-right: 50px;
+}
+
+.order-summary div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+p.text {
+    margin-right: 100px;
+    font-size: 18px;
+}
+
+p.value {
+    font-size: 18px;
+    font-weight: bold;
+}

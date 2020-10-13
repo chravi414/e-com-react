@@ -34,3 +34,10 @@ ul {
 .text-light {
     color: var(--lightBlue);
 }
+
+.pageNotFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

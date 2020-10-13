@@ -17,13 +17,13 @@ export default class ProductList extends Component {
                 return (
                   <>
                     <ProductItem
+                      key={product.id}
                       addToCartHandler={() => {
                         data.cartHandler(product.id);
                         data.openModal(product.id);
                       }}
                       clickHandler={() => data.detailHandler(product.id)}
                       product={product}
-                      key={product.id}
                     />
                   </>
                 );
