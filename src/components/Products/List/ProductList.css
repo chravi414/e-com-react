@@ -1,0 +1,22 @@
+.products {
+    max-width: 1190px;
+    width: 95%;
+    display: grid;
+    margin: auto;
+    gap: 35px;
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width:768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:500px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
