@@ -153,6 +153,18 @@ export class ProductProvider extends Component {
     );
   };
 
+  clearCart = () => {
+    this.setProducts();
+    this.setState({
+      cart: [],
+      summary: {
+        total: 0,
+        subtotal: 0,
+        tax: 0,
+      },
+    });
+  };
+
   render() {
     return (
       <ProductContext.Provider
@@ -166,6 +178,7 @@ export class ProductProvider extends Component {
           increaseHandler: this.increaseCount,
           deleteHandler: this.deleteItemFromCart,
           totalCalculator: this.calculateTotals,
+          clearCartHandler: this.clearCart,
         }}
       >
         {this.props.children}

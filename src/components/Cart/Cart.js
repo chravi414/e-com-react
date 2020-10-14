@@ -5,8 +5,12 @@ import CartItem from "./CartItem";
 import "./Cart.css";
 import { ProductConsumer } from "./../../data/Context";
 import OrderSummary from "./../OrderSummary/OrderSummary";
+import Payment from "../Payment/Payment";
 
 export default class Cart extends Component {
+  state = {
+    paymentErrorMsg: "",
+  };
   render() {
     return (
       <ProductConsumer>
@@ -17,6 +21,7 @@ export default class Cart extends Component {
             increaseHandler,
             deleteHandler,
             summary,
+            clearCartHandler,
           } = data;
           if (cart.length === 0) {
             return (
@@ -31,6 +36,9 @@ export default class Cart extends Component {
           return (
             <div className="cart">
               <Title title="My Cart" />
+              {this.state.paymentErrorMsg && (
+                <p className="error">{this.state.paymentErrorMsg}</p>
+              )}
               <div className="cart-header">
                 <div className="product">
                   <h2>Product</h2>
@@ -54,6 +62,16 @@ export default class Cart extends Component {
               ))}
               <div className="summary">
                 <OrderSummary summary={summary} />
+              </div>
+              <div className="payment">
+                <Payment
+                  total={summary.total}
+                  history={this.props.history}
+                  successHandler={clearCartHandler}
+                  errorHandler={(msg) =>
+                    this.setState({ paymentErrorMsg: msg })
+                  }
+                />
               </div>
             </div>
           );

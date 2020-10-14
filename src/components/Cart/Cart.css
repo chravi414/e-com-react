@@ -26,6 +26,15 @@
     justify-content: flex-end;
 }
 
+.error {
+    color: crimson
+}
+
+.payment {
+    margin-bottom: 30px;
+    text-align: right;
+}
+
 @media screen and (max-width:600px) {
     .cart,
     .empty-cart {
